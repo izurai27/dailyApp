@@ -1,0 +1,54 @@
+.wrapRecipeAdded{
+  display: flex;
+  justify-content: space-between;
+  /* width:80vw; */
+  height: fit-content;
+  align-items: center;
+  margin:auto;
+
+}
+
+li.list-group-item.wrapRecipeAdded{
+   margin-bottom: 10px;
+   border-top:1px solid rgb(202, 201, 201);
+}
+
+.recipeAddedItem{
+  margin-right: 15px;
+}
+
+.btn-sm{
+  cursor:pointer;
+}
+
+.button-group{
+  width : 92px;
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: flex-end;
+}
+
+.button-group .btn{
+  margin-left: 15px;
+}
+
+.header{
+  display: flex;
+  padding: 20 10px ;
+  height: 6rem;
+  display:flex;
+  align-items: center;
+}
+
+.titleRecipeAdded{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.container{
+  border: 1px solid grey;
+  margin-top: 20px;
+  padding:10px;
+  width:90vw;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px grey;
+}

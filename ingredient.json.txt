@@ -1,0 +1,722 @@
+[
+    {
+        "ingredientsName": "ayam",
+        "quantity": 1,
+        "measurement": "kg",
+        "_id": "62396368e7661aa968b1ce1e"
+    },
+    {
+        "ingredientsName": "jeruk nipis",
+        "quantity": 2,
+        "measurement": "buah",
+        "_id": "62396368e7661aa968b1ce1f"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 2,
+        "measurement": "sdt",
+        "_id": "62396368e7661aa968b1ce20"
+    },
+    {
+        "ingredientsName": "kaldu ayam",
+        "quantity": 1,
+        "measurement": "sdt",
+        "_id": "62396368e7661aa968b1ce21"
+    },
+    {
+        "ingredientsName": "merica",
+        "quantity": 0.5,
+        "measurement": "sdt",
+        "_id": "62396368e7661aa968b1ce22"
+    },
+    {
+        "ingredientsName": "bawang putih",
+        "quantity": 8,
+        "measurement": "siung",
+        "_id": "62396368e7661aa968b1ce23"
+    },
+    {
+        "ingredientsName": "bawang merah",
+        "quantity": 7,
+        "measurement": "siung",
+        "_id": "62396368e7661aa968b1ce24"
+    },
+    {
+        "ingredientsName": "kemiri",
+        "quantity": 6,
+        "measurement": "butir",
+        "_id": "62396368e7661aa968b1ce25"
+    },
+    {
+        "ingredientsName": "jahe",
+        "quantity": 2,
+        "measurement": "ruas",
+        "_id": "62396368e7661aa968b1ce26"
+    },
+    {
+        "ingredientsName": "kunyit",
+        "quantity": 2,
+        "measurement": "ruas",
+        "_id": "62396368e7661aa968b1ce27"
+    },
+    {
+        "ingredientsName": "cabai keriting merah",
+        "quantity": 60,
+        "measurement": "gram",
+        "_id": "62396368e7661aa968b1ce28"
+    },
+    {
+        "ingredientsName": "cabai rawit merah",
+        "quantity": 80,
+        "measurement": "gram",
+        "_id": "62396368e7661aa968b1ce29"
+    },
+    {
+        "ingredientsName": "minyak goreng",
+        "quantity": 50,
+        "measurement": "ml",
+        "_id": "62396368e7661aa968b1ce2a"
+    },
+    {
+        "ingredientsName": "cabai rawit merah",
+        "quantity": 13,
+        "measurement": "buah",
+        "_id": "62396368e7661aa968b1ce2b"
+    },
+    {
+        "ingredientsName": "daun kemangi",
+        "quantity": 30,
+        "measurement": "gram",
+        "_id": "62396368e7661aa968b1ce2c"
+    },
+    {
+        "ingredientsName": "daun bawang",
+        "quantity": 1,
+        "measurement": "batang",
+        "_id": "62396368e7661aa968b1ce2d"
+    },
+    {
+        "ingredientsName": "daun salam",
+        "quantity": 3,
+        "measurement": "lembar",
+        "_id": "62396368e7661aa968b1ce2e"
+    },
+    {
+        "ingredientsName": "serai",
+        "quantity": 2,
+        "measurement": "batang",
+        "_id": "62396368e7661aa968b1ce2f"
+    },
+    {
+        "ingredientsName": "daun pandan",
+        "quantity": 1,
+        "measurement": "lembar",
+        "_id": "62396368e7661aa968b1ce30"
+    },
+    {
+        "ingredientsName": "daun jeruk",
+        "quantity": 5,
+        "measurement": "lembar",
+        "_id": "62396368e7661aa968b1ce31"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 1,
+        "measurement": "sdt",
+        "_id": "62396368e7661aa968b1ce32"
+    },
+    {
+        "ingredientsName": "gula",
+        "quantity": 1.5,
+        "measurement": "sdm",
+        "_id": "62396368e7661aa968b1ce33"
+    },
+    {
+        "ingredientsName": "kaldu ayam",
+        "quantity": 1,
+        "measurement": "sdt",
+        "_id": "62396368e7661aa968b1ce34"
+    },
+    {
+        "ingredientsName": "Telur ayam",
+        "quantity": 10,
+        "measurement": "butir",
+        "_id": "623963f4e7661aa968b1ce3b"
+    },
+    {
+        "ingredientsName": "bawang putih cincang",
+        "quantity": 2,
+        "measurement": "sdm",
+        "_id": "623963f4e7661aa968b1ce3c"
+    },
+    {
+        "ingredientsName": "bawang merah kupas",
+        "quantity": 1,
+        "measurement": "genggam",
+        "_id": "623963f4e7661aa968b1ce3d"
+    },
+    {
+        "ingredientsName": "cabai rawit merah",
+        "quantity": 20,
+        "measurement": "buah",
+        "_id": "623963f4e7661aa968b1ce3e"
+    },
+    {
+        "ingredientsName": "cabai merah keriting",
+        "quantity": 4,
+        "measurement": "buah",
+        "_id": "623963f4e7661aa968b1ce3f"
+    },
+    {
+        "ingredientsName": "cabai gendot",
+        "quantity": 2,
+        "measurement": "buah",
+        "_id": "623963f4e7661aa968b1ce40"
+    },
+    {
+        "ingredientsName": "daun kemangi",
+        "quantity": 50,
+        "measurement": "gram",
+        "_id": "623963f4e7661aa968b1ce41"
+    },
+    {
+        "ingredientsName": "kecap ikan",
+        "quantity": 4,
+        "measurement": "sdm",
+        "_id": "623963f4e7661aa968b1ce42"
+    },
+    {
+        "ingredientsName": "saus tiram",
+        "quantity": 4,
+        "measurement": "sdm",
+        "_id": "623963f4e7661aa968b1ce43"
+    },
+    {
+        "ingredientsName": "gula",
+        "quantity": 3,
+        "measurement": "sdt",
+        "_id": "623963f4e7661aa968b1ce44"
+    },
+    {
+        "ingredientsName": "Daging Sapi Gandik",
+        "quantity": 1,
+        "measurement": "kg",
+        "_id": "623968e8e7661aa968b1ce99"
+    },
+    {
+        "ingredientsName": "bawang putih",
+        "quantity": 15,
+        "measurement": "siung",
+        "_id": "623968e8e7661aa968b1ce9a"
+    },
+    {
+        "ingredientsName": "kemiri",
+        "quantity": 6,
+        "measurement": "butir",
+        "_id": "623968e8e7661aa968b1ce9b"
+    },
+    {
+        "ingredientsName": "serai",
+        "quantity": 1,
+        "measurement": "batang",
+        "_id": "623968e8e7661aa968b1ce9c"
+    },
+    {
+        "ingredientsName": "lengkuas",
+        "quantity": 2,
+        "measurement": "iris",
+        "_id": "623968e8e7661aa968b1ce9d"
+    },
+    {
+        "ingredientsName": "daun salam",
+        "quantity": 2,
+        "measurement": "lembar",
+        "_id": "623968e8e7661aa968b1ce9e"
+    },
+    {
+        "ingredientsName": "air kelapa",
+        "quantity": 800,
+        "measurement": "ml",
+        "_id": "623968e8e7661aa968b1ce9f"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 0.5,
+        "measurement": "sdm",
+        "_id": "623968e8e7661aa968b1cea0"
+    },
+    {
+        "ingredientsName": "cabai merah besar",
+        "quantity": 8,
+        "measurement": "buah",
+        "_id": "623968e8e7661aa968b1cea1"
+    },
+    {
+        "ingredientsName": "cabai keriting",
+        "quantity": 20,
+        "measurement": "buah",
+        "_id": "623968e8e7661aa968b1cea2"
+    },
+    {
+        "ingredientsName": "cabai rawit",
+        "quantity": 8,
+        "measurement": "buah",
+        "_id": "623968e8e7661aa968b1cea3"
+    },
+    {
+        "ingredientsName": "bawang merah geprek",
+        "quantity": 18,
+        "measurement": "siung",
+        "_id": "623968e8e7661aa968b1cea4"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 0.5,
+        "measurement": "sdt",
+        "_id": "623968e8e7661aa968b1cea5"
+    },
+    {
+        "ingredientsName": "Kelapa parut",
+        "quantity": 335,
+        "measurement": "gram",
+        "_id": "62396c60e7661aa968b1cf05"
+    },
+    {
+        "ingredientsName": "ebi",
+        "quantity": 1,
+        "measurement": "sdm",
+        "_id": "62396c60e7661aa968b1cf06"
+    },
+    {
+        "ingredientsName": "bawang merah",
+        "quantity": 7,
+        "measurement": "siung",
+        "_id": "62396c60e7661aa968b1cf07"
+    },
+    {
+        "ingredientsName": "bawang putih",
+        "quantity": 5,
+        "measurement": "siung",
+        "_id": "62396c60e7661aa968b1cf08"
+    },
+    {
+        "ingredientsName": "kencur",
+        "quantity": 2,
+        "measurement": "cm",
+        "_id": "62396c60e7661aa968b1cf09"
+    },
+    {
+        "ingredientsName": "cabai merah",
+        "quantity": 5,
+        "measurement": "buah",
+        "_id": "62396c60e7661aa968b1cf0a"
+    },
+    {
+        "ingredientsName": "daun salam",
+        "quantity": 2,
+        "measurement": "lembar",
+        "_id": "62396c60e7661aa968b1cf0b"
+    },
+    {
+        "ingredientsName": "serai",
+        "quantity": 2,
+        "measurement": "batang",
+        "_id": "62396c60e7661aa968b1cf0c"
+    },
+    {
+        "ingredientsName": "daun jeruk",
+        "quantity": 2,
+        "measurement": "lembar",
+        "_id": "62396c60e7661aa968b1cf0d"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 0.5,
+        "measurement": "sdt",
+        "_id": "62396c60e7661aa968b1cf0e"
+    },
+    {
+        "ingredientsName": "penyebab",
+        "quantity": 0.5,
+        "measurement": "sdt",
+        "_id": "62396c60e7661aa968b1cf0f"
+    },
+    {
+        "ingredientsName": "gula pasir",
+        "quantity": 1.5,
+        "measurement": "sdm",
+        "_id": "62396c60e7661aa968b1cf10"
+    },
+    {
+        "ingredientsName": "gula palem",
+        "quantity": 1.5,
+        "measurement": "sdm",
+        "_id": "62396c60e7661aa968b1cf11"
+    },
+    {
+        "ingredientsName": "minyak goreng",
+        "quantity": 20,
+        "measurement": "ml",
+        "_id": "62396c60e7661aa968b1cf12"
+    },
+    {
+        "ingredientsName": "beras ketan putih",
+        "quantity": 840,
+        "measurement": "gram",
+        "_id": "62396c60e7661aa968b1cf13"
+    },
+    {
+        "ingredientsName": "bumbu kuliner nusantara nasi kuning khas manado",
+        "quantity": 2,
+        "measurement": "bungkus",
+        "_id": "62396c60e7661aa968b1cf14"
+    },
+    {
+        "ingredientsName": "santan kental",
+        "quantity": 200,
+        "measurement": "ml",
+        "_id": "62396c60e7661aa968b1cf15"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 0.5,
+        "measurement": "sdt",
+        "_id": "62396c60e7661aa968b1cf16"
+    },
+    {
+        "ingredientsName": "daun pandan",
+        "quantity": 5,
+        "measurement": "lembar",
+        "_id": "62396c60e7661aa968b1cf17"
+    },
+    {
+        "ingredientsName": "Tepung Bogasari Segitiga Biru",
+        "quantity": 80,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1cec5"
+    },
+    {
+        "ingredientsName": "maizena",
+        "quantity": 1,
+        "measurement": "sdm",
+        "_id": "62396ae3e7661aa968b1cec6"
+    },
+    {
+        "ingredientsName": "coklat bubuk",
+        "quantity": 30,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1cec7"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 0.5,
+        "measurement": "sdt",
+        "_id": "62396ae3e7661aa968b1cec8"
+    },
+    {
+        "ingredientsName": "baking powder",
+        "quantity": 1,
+        "measurement": "sdt",
+        "_id": "62396ae3e7661aa968b1cec9"
+    },
+    {
+        "ingredientsName": "gula",
+        "quantity": 75,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ceca"
+    },
+    {
+        "ingredientsName": "telur",
+        "quantity": 3,
+        "measurement": "butir",
+        "_id": "62396ae3e7661aa968b1cecb"
+    },
+    {
+        "ingredientsName": "ekstrak vanilla",
+        "quantity": 1,
+        "measurement": "sdt",
+        "_id": "62396ae3e7661aa968b1cecc"
+    },
+    {
+        "ingredientsName": "minyak goreng",
+        "quantity": 80,
+        "measurement": "ml",
+        "_id": "62396ae3e7661aa968b1cecd"
+    },
+    {
+        "ingredientsName": "kopi instan",
+        "quantity": 2,
+        "measurement": "sdt",
+        "_id": "62396ae3e7661aa968b1cece"
+    },
+    {
+        "ingredientsName": "milk chocolate",
+        "quantity": 120,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1cecf"
+    },
+    {
+        "ingredientsName": "dark chocolate",
+        "quantity": 120,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ced0"
+    },
+    {
+        "ingredientsName": "susu",
+        "quantity": 120,
+        "measurement": "ml",
+        "_id": "62396ae3e7661aa968b1ced1"
+    },
+    {
+        "ingredientsName": "margarin",
+        "quantity": 65,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ced2"
+    },
+    {
+        "ingredientsName": "Tepung bogasari Kunci Biru",
+        "quantity": 60,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ced3"
+    },
+    {
+        "ingredientsName": "Gula",
+        "quantity": 30,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ced4"
+    },
+    {
+        "ingredientsName": "margarin",
+        "quantity": 50,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ced5"
+    },
+    {
+        "ingredientsName": "kelapa parut",
+        "quantity": 20,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ced6"
+    },
+    {
+        "ingredientsName": "garam",
+        "quantity": 0.5,
+        "measurement": "sdt",
+        "_id": "62396ae3e7661aa968b1ced7"
+    },
+    {
+        "ingredientsName": "kopi susu(tanpa ampas)",
+        "quantity": 50,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1ced8"
+    },
+    {
+        "ingredientsName": "susu",
+        "quantity": 300,
+        "measurement": "ml",
+        "_id": "62396ae3e7661aa968b1ced9"
+    },
+    {
+        "ingredientsName": "telur",
+        "quantity": 1,
+        "measurement": "butir",
+        "_id": "62396ae3e7661aa968b1ceda"
+    },
+    {
+        "ingredientsName": "maizena",
+        "quantity": 1,
+        "measurement": "sdm",
+        "_id": "62396ae3e7661aa968b1cedb"
+    },
+    {
+        "ingredientsName": "kental manis",
+        "quantity": 40,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1cedc"
+    },
+    {
+        "ingredientsName": "susu bubuk",
+        "quantity": 40,
+        "measurement": "gr",
+        "_id": "62396ae3e7661aa968b1cedd"
+    },
+    {
+        "ingredientsName": "susu",
+        "quantity": 300,
+        "measurement": "ml",
+        "_id": "62396ae3e7661aa968b1cede"
+    },
+    {
+        "ingredientsName": "telur",
+        "quantity": 1,
+        "measurement": "butir",
+        "_id": "62396ae3e7661aa968b1cedf"
+    },
+    {
+        "ingredientsName": "maizena",
+        "quantity": 1,
+        "measurement": "sdm",
+        "_id": "62396ae3e7661aa968b1cee0"
+    },
+    {
+        "ingredientsName": "kental manis",
+        "quantity": 40,
+        "measurement": "gram",
+        "_id": "62396ae3e7661aa968b1cee1"
+    },
+    {
+        "ingredientsName": "ayam",
+        "quantity": 1,
+        "measurement": "ekor",
+        "_id": "62396d57e7661aa968b1cf30"
+    },
+    {
+        "ingredientsName": "ceker ayam",
+        "quantity": 250,
+        "measurement": "gram",
+        "_id": "62396d57e7661aa968b1cf31"
+    },
+    {
+        "ingredientsName": "telur",
+        "quantity": 4,
+        "measurement": "butir",
+        "_id": "62396d57e7661aa968b1cf32"
+    },
+    {
+        "ingredientsName": "tahu putih",
+        "quantity": 4,
+        "measurement": "buah",
+        "_id": "62396d57e7661aa968b1cf33"
+    },
+    {
+        "ingredientsName": "ati ampela",
+        "quantity": 4,
+        "measurement": "pasang",
+        "_id": "62396d57e7661aa968b1cf34"
+    },
+    {
+        "ingredientsName": "bawang putih",
+        "quantity": 5,
+        "measurement": "siung",
+        "_id": "62396d57e7661aa968b1cf35"
+    },
+    {
+        "ingredientsName": "bawang merah",
+        "quantity": 5,
+        "measurement": "siung",
+        "_id": "62396d57e7661aa968b1cf36"
+    },
+    {
+        "ingredientsName": "kencur",
+        "quantity": 2,
+        "measurement": "buah",
+        "_id": "62396d57e7661aa968b1cf37"
+    },
+    {
+        "ingredientsName": "jahe",
+        "quantity": 1,
+        "measurement": "ruas",
+        "_id": "62396d57e7661aa968b1cf38"
+    },
+    {
+        "ingredientsName": "tomat merah",
+        "quantity": 1,
+        "measurement": "buah",
+        "_id": "62396d57e7661aa968b1cf39"
+    },
+    {
+        "ingredientsName": "cabai merah keriting",
+        "quantity": 2,
+        "measurement": "buah",
+        "_id": "62396d57e7661aa968b1cf3a"
+    },
+    {
+        "ingredientsName": "bubuk ngohiong",
+        "quantity": 2,
+        "measurement": "sdt",
+        "_id": "62396d57e7661aa968b1cf3b"
+    },
+    {
+        "ingredientsName": "kecap manis",
+        "quantity": 6,
+        "measurement": "sdm",
+        "_id": "62396d57e7661aa968b1cf3c"
+    },
+    {
+        "ingredientsName": "kecap asin",
+        "quantity": 6,
+        "measurement": "sdm",
+        "_id": "62396d57e7661aa968b1cf3d"
+    },
+    {
+        "ingredientsName": "saus tiram",
+        "quantity": 2,
+        "measurement": "sdm",
+        "_id": "62396d57e7661aa968b1cf3e"
+    },
+    {
+        "ingredientsName": "kecap inggris",
+        "quantity": 0.5,
+        "measurement": "sdm",
+        "_id": "62396d57e7661aa968b1cf3f"
+    },
+    {
+        "ingredientsName": "dark soy sauce",
+        "quantity": 2,
+        "measurement": "sdm",
+        "_id": "62396d57e7661aa968b1cf40"
+    },
+    {
+        "ingredientsName": "bawang putih",
+        "quantity": 3,
+        "measurement": "siung",
+        "_id": "62396f07e7661aa968b1cf67"
+    },
+    {
+        "ingredientsName": "bawang merah",
+        "quantity": 5,
+        "measurement": "butir",
+        "_id": "62396f07e7661aa968b1cf68"
+    },
+    {
+        "ingredientsName": "kemiri",
+        "quantity": 2,
+        "measurement": "butir",
+        "_id": "62396f07e7661aa968b1cf69"
+    },
+    {
+        "ingredientsName": "Mi BonCabe",
+        "quantity": 2,
+        "measurement": "bungkus",
+        "_id": "62396f07e7661aa968b1cf6a"
+    },
+    {
+        "ingredientsName": "telur ayam",
+        "quantity": 2,
+        "measurement": "butir",
+        "_id": "62396f07e7661aa968b1cf6b"
+    },
+    {
+        "ingredientsName": "daun bawang",
+        "quantity": 1,
+        "measurement": "batang",
+        "_id": "62396f07e7661aa968b1cf6c"
+    },
+    {
+        "ingredientsName": "seledri",
+        "quantity": 1,
+        "measurement": "batang",
+        "_id": "62396f07e7661aa968b1cf6d"
+    },
+    {
+        "ingredientsName": "kol",
+        "quantity": 2,
+        "measurement": "lembar",
+        "_id": "62396f07e7661aa968b1cf6e"
+    },
+    {
+        "ingredientsName": "tomat merah",
+        "quantity": 0.5,
+        "measurement": "buah",
+        "_id": "62396f07e7661aa968b1cf6f"
+    }
+]

@@ -1,0 +1,23 @@
+nav .navbar-collapse.collapse{
+  display:block;
+}
+
+@media (max-width: 576px){
+  nav .navbar-collapse.collapse{
+    overflow:hidden;
+  }
+
+  nav .navbar-collapse.active{
+    height:fit-content !important;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+nav .navbar-collapse{
+  transition : .6s all ease-in-out;
+  height : 0 !important;
+
+}
