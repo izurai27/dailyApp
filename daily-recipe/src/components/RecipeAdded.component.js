@@ -1,6 +1,7 @@
 import React from 'react'
 import './RecipeAdded.css'
 // import Gap from './gap'
+import axios from 'axios'
 
 const RecipeAdded = (props) => {
   const title = props.recipetitle
@@ -16,6 +17,17 @@ const RecipeAdded = (props) => {
   const handleDelete = (e) => {
     const targetId = e.target.dataset.value;
     console.log(targetId)
+    let text;
+    if (window.confirm("Anda akan hapus resep ini dari list Makanan yang akan dimasak?") === true) {
+      text = "You pressed OK!";
+      axios.delete('http://localhost:5000/addList/id='+targetId)
+            .then(resp => console.log(resp))
+      
+    } else {
+      text = "You canceled!";
+    }
+
+    console.log(text)
   }
 
   return (
@@ -44,6 +56,24 @@ const RecipeAdded = (props) => {
           )
         })}
       </ul>
+      {/* Modal
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Konfirmasi</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Anda akan hapus resep ini dari list Makanan yang akan dimasak?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ya</button>
+              <button type="button" class="btn btn-primary">Tidak</button>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </div>
 
     
