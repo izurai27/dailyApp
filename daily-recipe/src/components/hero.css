@@ -3,7 +3,7 @@
   height:43vh;
   background-image: url("../images/background2e.jpg");
   /* height:24vh; */
-  /* background-image: url("../images/background4e.jpg"); */
+  background-image: url("../images/background4e.jpg");
   width:100vw;
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,6 +51,15 @@ p{
   font-size:calc(10/320x100vw);
   font-size:0.7rem;
   margin-bottom:0;
+}
+
+.hide{
+  display:none;
+}
+
+.trashIcon{
+  /* the use of pointer-events :none is that to make the icon is unclickable as if it is hologram */
+  pointer-events: none; 
 }
 
 @media only screen and (min-width:576px){

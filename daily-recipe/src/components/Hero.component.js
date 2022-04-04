@@ -9,7 +9,7 @@ const Hero = () => {
       {/* <img src={bg} alt="bg-illustration" /> */}
       <div className='caption'>
         <h1 >Selamat datang di daily Recipe</h1>
-        <p>Selamat menjelajah, semoga bermanfaat </p><p>untuk lebih mengenal tentang website ini, <Link to='about'>klik link ini</Link></p>
+        <p>Selamat menjelajah, semoga bermanfaat! </p><p>untuk lebih mengenal tentang website ini, <Link to='about'>klik link ini</Link></p>
 
       </div>
       

@@ -15,7 +15,7 @@ const RecipeList = () => {
      axios.get(url)
       .then(res => {
         setRecipe(res.data)
-        // console.log(res.data)
+        console.log(res.data)
       })
       .catch(err => {
         console.log(err);
