@@ -30,13 +30,15 @@ const DetailRecipe = () => {
 
   return (
     <div>
+      <br/>
       <Link to='/'><button className='btn btn-primary mx-3'>back</button></Link>
       <div className="container-md d-flex flex-row justify-content-evenly flex-wrap mb-5">
             <div className="card mt-4 shadow mx-2" style={{width: "40rem"}} key={recipeDetail._id}>
               <img src={recipeDetail.thumb} className="card-img-top" alt="food"/>
               <div className="card-body">
                 <div className="card-title" style={{fontSize: "1rem", fontWeight:"600"}}>{recipeDetail.title}</div>
-                <div className="card-title" style={{fontSize: "14px"}}>Sumber : Devina Hermawan</div>
+                <div className="card-text" style={{fontSize: "14px"}}>Untuk {recipeDetail.portion} porsi</div>
+                <div className="card-text" style={{fontSize: "14px"}}>Sumber : {recipeDetail.source}</div><br/>
                 {ingInstruction.map(elemen => 
                   {return (
                     <div>
