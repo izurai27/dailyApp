@@ -48,7 +48,7 @@ const RecipeAdded = (props) => {
             <li className="list-group-item " key={element._id}>
               <div className=" wrapRecipeAdded " >
                 <span className='recipeAddedItem'>{element.title} untuk {element.portion*element.multiplier} porsi</span>
-                <button data-value={element._id} className='btn-sm btn-danger delete-btn' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button>
+                {/* <button data-value={element._id} className='btn-sm btn-danger delete-btn' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button> */}
               </div>
               {/* <Gap height="10px"/>   */}
             </li>
