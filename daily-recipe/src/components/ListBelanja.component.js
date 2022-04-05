@@ -16,40 +16,58 @@ const ListBelanja = () => {
     const sendGetRequest = async () => {
       try {
           const resp = await axios.get('http://localhost:5000/addList/userid='+userid);
-         
-          setTitleState(resp.data.map(element => ({title:element.title, _id:element._id})))
+          console.log(resp.data)
+          setTitleState(resp.data.map(element => (
+            {
+              title:element.title, 
+              _id:element._id, 
+              portion:element.portion, 
+              multiplier:element.multiplier
+            }
+            )))
                     
-          const temp = resp.data.map(element => element.ingredients)
-          const len = temp.length
-          
+          // const ingredientArr = resp.data.map(element => element.ingredients)
+          const ingredientArr = resp.data.map(item => {
+            return item.ingredients.map(item2 => {
+              return (
+
+              //  console.log(item2.ingredientsName,item2.quantity, item.multiplier))
+               {ingredientsName:item2.ingredientsName,multipliedQuantity:item2.quantity*item.multiplier, measurement:item2.measurement});
+             })
+            });
+          const len = ingredientArr.length
+          console.log(ingredientArr,len)
           let ingredientCombined = []
           for (let i=0 ; i<len ; i++){
-            ingredientCombined = [...ingredientCombined,...temp[i]]
+            ingredientCombined = [...ingredientCombined,...ingredientArr[i]]
           }
+          console.log(ingredientCombined)
 
           const ingredientReduce=[]
           ingredientCombined.reduce(function(result, item) {
             
             if (!result[item.ingredientsName]) {
-              result[item.ingredientsName] = { ingredientsName: item.ingredientsName, quantity: 0, measurement:item.measurement };
+              result[item.ingredientsName] = { ingredientsName: item.ingredientsName, multipliedQuantity: 0, measurement:item.measurement };
               ingredientReduce.push(result[item.ingredientsName])
             }
 
-            result[item.ingredientsName].quantity += item.quantity;
+            result[item.ingredientsName].multipliedQuantity += item.multipliedQuantity;
                      
             return result;
 
           }, {});
 
+          console.log(ingredientReduce)
+
           const addShopping = ingredientReduce.map(elemen => ({
             userid : userid,
             ingredientsName :elemen.ingredientsName,
-            quantity : elemen.quantity,
+            quantity : elemen.multipliedQuantity,
             measurement :  elemen.measurement
           }))
           console.log(addShopping)
           
-          
+          //perlu investigasi dl apakah diperlukan atau tidak
           await axios.delete('http://localhost:5000/shoppingList/deleteby/userid='+userid)
           .then(resp => console.log(resp))
           

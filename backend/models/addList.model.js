@@ -14,7 +14,8 @@ const addListSchema = new schema ({
   ingredients : [{
                     ingredientsName: {type: String, require: true, lowercase: true} ,
                     quantity : {type:Number, require:true} ,
-                    measurement : {type:String, require: true}
+                    measurement : {type:String, require: true},
+                    
                   }],
   
  

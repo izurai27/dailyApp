@@ -48,8 +48,8 @@ const IngredientList = () => {
         <div className='header d-flex justify-content-between'>
           <span className='titleRecipeAdded'>List belanja</span>
           <span className='button-group'>
-            <button className='btn-sm btn-primary'><i class="bi bi-arrow-clockwise"></i></button>
-            <button className='btn-sm btn-secondary'><i class="bi bi-pencil"></i></button>
+            <button className='btn-sm btn-primary'><i className="bi bi-arrow-clockwise"></i></button>
+            <button className='btn-sm btn-secondary'><i className="bi bi-pencil"></i></button>
           </span>
         </div>
       

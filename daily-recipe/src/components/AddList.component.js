@@ -9,6 +9,7 @@ const AddList = (props) => {
     const recipeId = props.recipeId;
     const title = props.title;
     const ingredients = props.ingredients;
+    const portion = props.portion;
     let addList ={};
 
     const isExist = await axios.get('http://localhost:5000/addList/userid='+userid+'/recipeId='+recipeId) 
@@ -24,7 +25,7 @@ const AddList = (props) => {
       .then(res => console.log(res.data));
 
     } else {
-      addList = {userid, title, recipeId, ingredients}
+      addList = {userid, title, recipeId, ingredients, portion}
       await axios.post('http://localhost:5000/addList/add',addList)
       .then(res => console.log(res.data));
     }

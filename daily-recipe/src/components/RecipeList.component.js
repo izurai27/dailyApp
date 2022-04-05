@@ -33,7 +33,7 @@ const RecipeList = () => {
           <div className="card mt-4 shadow mx-2" style={{width: "15rem"}} key={elemen._id}>
             <img src={elemen.thumb} className="card-img-top" alt="food"/>
             <div className="card-body">
-              <div className="card-title" style={{fontSize: "1rem", fontWeight:"600"}}>{elemen.title}</div>
+              <div className="card-title" style={{fontSize: "1rem", fontWeight:"600"}}>Resep {elemen.title}</div>
               <div className="card-text" style={{fontSize: "14px"}}>Sumber : {elemen.source}</div>
               <div className="card-text" style={{fontSize: "14px"}}>Untuk {elemen.portion} porsi</div>
               <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>

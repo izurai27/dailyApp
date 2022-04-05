@@ -35,7 +35,7 @@ const RecipeAdded = (props) => {
       <div className='header d-flex justify-content-between'>
         <span className='titleRecipeAdded'>Makanan yang akan dimasak</span>
         <span className='button-group'>
-          <button className='btn-sm btn-primary' onClick={hideList}><i id="arrow" class="bi bi-caret-up bi-caret-down "></i></button>
+          <button className='btn-sm btn-primary' onClick={hideList}><i id="arrow" className="bi bi-caret-up bi-caret-down "></i></button>
           {/* <button className='btn-sm btn-secondary' onClick={showDelete}><i class="bi bi-pencil"></i></button> */}
         </span>
         
@@ -47,8 +47,8 @@ const RecipeAdded = (props) => {
           return(
             <li className="list-group-item " key={element._id}>
               <div className=" wrapRecipeAdded " >
-                <span className='recipeAddedItem'>{element.title}</span>
-                <button data-value={element._id} className='btn-sm btn-danger delete-btn' onClick={handleDelete}><i class="bi bi-trash3 trashIcon"></i></button>
+                <span className='recipeAddedItem'>{element.title} untuk {element.portion*element.multiplier} porsi</span>
+                <button data-value={element._id} className='btn-sm btn-danger delete-btn' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button>
               </div>
               {/* <Gap height="10px"/>   */}
             </li>
@@ -56,24 +56,7 @@ const RecipeAdded = (props) => {
           )
         })}
       </ul>
-      {/* Modal
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Konfirmasi</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Anda akan hapus resep ini dari list Makanan yang akan dimasak?
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ya</button>
-              <button type="button" class="btn btn-primary">Tidak</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
+      
     </div>
 
     
