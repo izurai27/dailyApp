@@ -6,7 +6,7 @@ import logo from '../images/logo.svg'
 const Navbar = () =>{
   const [show,setShow] = useState('true')
     return (
-      <nav className = 'navbar navbar-dark navbar-expand-sm px-3' style={{backgroundColor:'#123559'}}>
+      <nav className = 'navbar navbar-dark navbar-expand-sm px-3' style={{backgroundColor:'#123559', position:"sticky", top:0, zIndex:999}}>
         <Link to='/' className='navbar-brand'><img src={logo} alt="logo" style={{height:"30px", border:"none"}}/></Link>
         <button className="navbar-toggler border border-info text-info" onClick={() => setShow(!show)} >
           <span className="navbar-toggler-icon"></span>

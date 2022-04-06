@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './RecipeAdded.css'
 // import Gap from './gap'
 import axios from 'axios'
 
 const RecipeAdded = (props) => {
+  // const [titles,setTitles] = useState([])
   const title = props.recipetitle
-  console.log(title)
+  // setTitles(title)
 
   const hideList = () => {
     const listRecipeAdded = document.querySelector("#listRecipeAdded");
@@ -30,6 +31,15 @@ const RecipeAdded = (props) => {
     console.log(text)
   }
 
+  const handleDecr = () => {
+    
+  }
+
+  const handleIncr = () => {
+
+  }
+
+
   return (
     <div className='container'>
       <div className='header d-flex justify-content-between'>
@@ -46,9 +56,14 @@ const RecipeAdded = (props) => {
         {title.map(element => {
           return(
             <li className="list-group-item " key={element._id}>
-              <div className=" wrapRecipeAdded " >
-                <span className='recipeAddedItem'>{element.title} untuk {element.portion*element.multiplier} porsi</span>
-                {/* <button data-value={element._id} className='btn-sm btn-danger delete-btn' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button> */}
+              <div className=" wrapRecipeAdded d-flex flex-column align-items-start " >
+                <div className='recipeAddedItem '>{element.title} untuk {element.portion*element.multiplier} porsi</div>
+                <small className="buttonGroup align-self-end">
+                  <button data-value={element._id} className='btn btn-secnndary delete-btn ' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button>
+                  <button className="btn" onClick={handleIncr}><i className="bi bi-plus-circle"></i></button>
+                  <span className='portionAmount'><small>{element.portion*element.multiplier} porsi</small></span>
+                  <button className='btn ' onClick={handleDecr}><i className="bi bi-dash-circle"></i></button>
+                </small>
               </div>
               {/* <Gap height="10px"/>   */}
             </li>

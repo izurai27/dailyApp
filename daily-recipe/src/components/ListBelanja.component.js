@@ -41,7 +41,7 @@ const ListBelanja = () => {
           for (let i=0 ; i<len ; i++){
             ingredientCombined = [...ingredientCombined,...ingredientArr[i]]
           }
-          console.log(ingredientCombined)
+          // console.log(ingredientCombined)
 
           const ingredientReduce=[]
           ingredientCombined.reduce(function(result, item) {
@@ -57,7 +57,7 @@ const ListBelanja = () => {
 
           }, {});
 
-          console.log(ingredientReduce)
+          // console.log(ingredientReduce)
 
           const addShopping = ingredientReduce.map(elemen => ({
             userid : userid,
@@ -65,7 +65,7 @@ const ListBelanja = () => {
             quantity : elemen.multipliedQuantity,
             measurement :  elemen.measurement
           }))
-          console.log(addShopping)
+          // console.log(addShopping)
           
           //perlu investigasi dl apakah diperlukan atau tidak
           await axios.delete('http://localhost:5000/shoppingList/deleteby/userid='+userid)
