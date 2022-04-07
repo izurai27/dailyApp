@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from './components/navbar.component'
@@ -11,21 +11,24 @@ import DetailRecipe from './components/DetailRecipe.component';
 import ShoppingList from './components/ShoppingList.component'
 import About from './components/about.component';
 
+
+
 function App() {
+  const [userid,setUserid] = useState('fajri')
+  
   return (
     <Router>
       <div>
         <Navbar />
         {/* <br/> */}
         <Routes>
-          <Route path='/' exact element={<Home/>}/>
-          <Route path='/list' element={<ListBelanja/>}/>
-          <Route path='/shoppinglist' element={<ShoppingList/>}/>
+          <Route path='/' exact element={<Home userid={userid}/>}/>
+          <Route path='/list' element={<ListBelanja userid={userid}/>}/>
+          <Route path='/shoppinglist' element={<ShoppingList userid={userid}/>}/>
           <Route path='/user/login' element={<Login/>}/>
           <Route path='/user/register' element={<Register/>}/>
           <Route path='/detail/:id' element={<DetailRecipe/>}/>
           <Route path='/about' element={<About/>}/>
-
         </Routes>
         
 

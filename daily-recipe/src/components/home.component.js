@@ -2,11 +2,11 @@ import React from 'react'
 import RecipeList from './RecipeList.component'
 import Hero from './Hero.component'
 
-const Home = () => {
+const Home = (props) => {
   return (
     <>
       <Hero/>
-      <RecipeList/>
+      <RecipeList userid={props.userid}/>
     
     </>
   )

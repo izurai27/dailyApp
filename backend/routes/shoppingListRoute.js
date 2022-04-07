@@ -19,13 +19,13 @@ router.route('/add').post((req,res)=>{
   
   const userid = req.body.userid
   const ingredientsName = req.body.ingredientsName
-  const quantity = req.body.quantity
+  const multipliedQuantity = req.body.multipliedQuantity
   const measurement = req.body.measurement
 
 
   // status = req.body.status
   const newShopping = new shopping({
-    userid, ingredientsName,quantity,measurement
+    userid, ingredientsName,multipliedQuantity,measurement
   })
 
   newShopping.save()
@@ -62,7 +62,7 @@ router.route('/update/userid=:id').post((req,res) => {
 
     shopping.userid = req.body.userid
     shopping.ingredientsName = req.body.ingredientsName
-    shopping.quantity = req.body.quantity
+    shopping.multipliedQuantity = req.body.multipliedQuantity
     shopping.measurement = req.body.measurement
     shopping.status = req.body.measurement
 

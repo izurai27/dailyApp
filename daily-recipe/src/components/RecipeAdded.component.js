@@ -1,12 +1,21 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './RecipeAdded.css'
 // import Gap from './gap'
 import axios from 'axios'
 
-const RecipeAdded = (props) => {
-  // const [titles,setTitles] = useState([])
-  const title = props.recipetitle
-  // setTitles(title)
+const RecipeAdded = ({recipetitle}) => {
+  const [titles, setTitles] = useState(["blah"])
+  // const title = props.recipetitle
+  const title = recipetitle
+  
+  useEffect(() => {   
+    
+    setTitles([...recipetitle])
+
+  },[recipetitle])
+
+  console.log(title)
+  console.log(titles)
 
   const hideList = () => {
     const listRecipeAdded = document.querySelector("#listRecipeAdded");
@@ -53,7 +62,7 @@ const RecipeAdded = (props) => {
       </div>
 
       <ul id="listRecipeAdded" className="list-group">
-        {title.map(element => {
+        {titles.map(element => {
           return(
             <li className="list-group-item " key={element._id}>
               <div className=" wrapRecipeAdded d-flex flex-column align-items-start " >
@@ -65,7 +74,7 @@ const RecipeAdded = (props) => {
                   <button className='btn ' onClick={handleDecr}><i className="bi bi-dash-circle"></i></button>
                 </small>
               </div>
-              {/* <Gap height="10px"/>   */}
+              
             </li>
             
           )

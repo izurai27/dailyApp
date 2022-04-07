@@ -1,21 +1,22 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 
-const IngredientList = () => {
+const ShoppingList = (props) => {
 
   // const [shoppingItem,setShoppingItem] = useState([])
   const [statusFalse,setstatusFalse] = useState([])
   const [statusTrue,setstatusTrue] = useState([])
   
-  const userid = 'izma'
+  const userid = props.userid;
 
   useEffect(() =>  {
     
     
     const sendGetRequest = async () => {
       try {
+        console.log(userid)
           const resp = await axios.get('http://localhost:5000/shoppingList/userid='+userid);
-
+          console.log(resp.data)
           // setShoppingItem(resp.data)
           setstatusFalse(resp.data.filter(element => element.status === false))
           setstatusTrue(resp.data.filter(element => element.status === true))
@@ -28,7 +29,7 @@ const IngredientList = () => {
   
   sendGetRequest();
 
-  },[]);
+  },[userid]);
   
   // console.log(shoppingItem)
   function handleChecked (e) {
@@ -62,7 +63,7 @@ const IngredientList = () => {
               <div className="form-check" key={element._id}>
               <input className="form-check-input" type="checkbox" value={element.status} id="flexCheckDefault" data-id={element._id} onChange={handleChecked}/>
               <label className="form-check-label" htmlFor="flexCheckDefault">
-                  {element.ingredientsName} {element.quantity} {element.measurement} 
+                  {element.ingredientsName} {element.multipliedQuantity} {element.measurement} 
               </label>
             </div>
           )  
@@ -92,4 +93,4 @@ const IngredientList = () => {
   )
 }
 
-export default IngredientList
+export default ShoppingList

@@ -11,7 +11,7 @@ const AddList = (props) => {
     const ingredients = props.ingredients;
     const portion = props.portion;
     let addList ={};
-
+    console.log(userid)
     const isExist = await axios.get('http://localhost:5000/addList/userid='+userid+'/recipeId='+recipeId) 
     .then(res => res.data)
     
@@ -38,7 +38,10 @@ const AddList = (props) => {
   }
 
   return (
-    <i className="bi bi-cart-plus" onClick={handleAddList} style={{fontSize: "2rem", cursor:'pointer'}}></i>
+    <button className='btn' onClick={handleAddList} >
+      <i className="bi bi-cart-plus" style={{fontSize: "2rem", cursor:'pointer'}}></i>
+
+    </button>
        
   )
 }

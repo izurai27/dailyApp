@@ -3,13 +3,17 @@ import axios from 'axios';
 import AddList from './AddList.component';
 import {Link} from 'react-router-dom'
 //command to get data from recipe database//
-
+import fetchdata from './fetchdata';
 const url = 'http://localhost:5000/recipes';
 
+// let recipes 
+// recipes = fetchdata('http://localhost:5000/recipes').then(res=>res.data)
 
 
-const RecipeList = () => {
+const RecipeList = (props) => {
   const [recipes,setRecipe] = useState([]);
+  
+  const userid = props.userid
 
   useEffect(() => {   
      axios.get(url)
@@ -21,9 +25,11 @@ const RecipeList = () => {
         console.log(err);
       })
 
+    
+
   },[])
   
-  console.log(recipes)
+  
 
   return (
     
@@ -38,7 +44,7 @@ const RecipeList = () => {
               <div className="card-text" style={{fontSize: "14px"}}>Untuk {elemen.portion} porsi</div>
               <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
                 <a href={elemen.ytLink} style={{fontSize: "2rem", color:'red'}} target="_blank" rel="noreferrer noopener"><i className="bi bi-youtube"></i></a>
-                <AddList recipeId={elemen._id} userid='izma' ingredients={elemen.ingredients} title={elemen.title} portion={elemen.portion}/>
+                <AddList recipeId={elemen._id} userid={userid} ingredients={elemen.ingredients} title={elemen.title} portion={elemen.portion}/>
                 <Link to={"/detail/"+elemen._id}>Lihat resep</Link>
               </div>
               
