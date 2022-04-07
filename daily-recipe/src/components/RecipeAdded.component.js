@@ -2,21 +2,29 @@ import React, {useEffect, useState} from 'react'
 import './RecipeAdded.css'
 // import Gap from './gap'
 import axios from 'axios'
+import ShoppingList from './ShoppingList.component'
+import updateShoppingList from '../functions/updateShoppingList'
 
-const RecipeAdded = ({recipetitle}) => {
+const RecipeAdded = (props) => {
   const [titles, setTitles] = useState(["blah"])
+  const [show,setShow] = useState('block')
+  const recipetitle = props.recipetitle
+  const userid = props.userid
+  const warning = document.querySelector("#warning")
   // const title = props.recipetitle
-  const title = recipetitle
+  // const title = recipetitle
   
   useEffect(() => {   
     
-    setTitles([...recipetitle])
+    setTitles([...recipetitle ])
 
   },[recipetitle])
 
-  console.log(title)
+  // console.log(title)
   console.log(titles)
 
+
+  //command utnuk menampilkan list recipeadded dan menyembunyikannya, supaya halaman bisa langsung menampilkan list belanja
   const hideList = () => {
     const listRecipeAdded = document.querySelector("#listRecipeAdded");
     const arrow = document.querySelector("#arrow")
@@ -40,47 +48,85 @@ const RecipeAdded = ({recipetitle}) => {
     console.log(text)
   }
 
-  const handleDecr = () => {
+  const handleIncrDecr = (e) => {
+
+  //1. update multiplier untuk titles
+    const index = e.target.dataset.index
+    const titleCopy = [...titles]
+
+    if(e.target.classList.contains('btnAdd')){
+      titleCopy[index].multiplier += 1
+    } else if(e.target.classList.contains('btnMin')) {
+      console.log(e.target.classList.contains('btnMin'))
+      if (titleCopy[index].multiplier > 1) { titleCopy[index].multiplier -= 1 }
+    }
     
+    setTitles([...titleCopy])
+    
+  //2. tampilkan warning dan button refresh shoppinglist, shoppinglist di hide
+    setShow('none')
+    
+    warning.style.display = "block"
+
+  //3. update ke database
+    titles.forEach(elemen => {
+      axios.patch('http://localhost:5000/addList/updatemultiplier/_id='+elemen._id,{multiplier:elemen.multiplier})
+      .then(res => console.log(res.data));
+    })
+    
+
+  //re-render shoppinglist
+    
+
   }
 
-  const handleIncr = () => {
-
+  const handleRefresh = () => {
+    updateShoppingList(userid);
+    console.log('yakin mau refresh')
+    setShow('block')
+    warning.style.display = "none"
   }
 
 
   return (
-    <div className='container'>
-      <div className='header d-flex justify-content-between'>
-        <span className='titleRecipeAdded'>Makanan yang akan dimasak</span>
-        <span className='button-group'>
-          <button className='btn-sm btn-primary' onClick={hideList}><i id="arrow" className="bi bi-caret-up bi-caret-down "></i></button>
-          {/* <button className='btn-sm btn-secondary' onClick={showDelete}><i class="bi bi-pencil"></i></button> */}
-        </span>
+    <div>
+      <div className='container'>
+        <div className='header d-flex justify-content-between'>
+          <span className='titleRecipeAdded'>Makanan yang akan dimasak</span>
+          <span className='button-group'>
+            <button className='btn-sm btn-primary' onClick={hideList}><i id="arrow" className="bi bi-caret-up bi-caret-down "></i></button>
+            {/* <button className='btn-sm btn-secondary' onClick={showDelete}><i class="bi bi-pencil"></i></button> */}
+          </span>
+          
         
-      
-      </div>
+        </div>
 
-      <ul id="listRecipeAdded" className="list-group">
-        {titles.map(element => {
-          return(
-            <li className="list-group-item " key={element._id}>
-              <div className=" wrapRecipeAdded d-flex flex-column align-items-start " >
-                <div className='recipeAddedItem '>{element.title} untuk {element.portion*element.multiplier} porsi</div>
-                <small className="buttonGroup align-self-end">
-                  <button data-value={element._id} className='btn btn-secnndary delete-btn ' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button>
-                  <button className="btn" onClick={handleIncr}><i className="bi bi-plus-circle"></i></button>
-                  <span className='portionAmount'><small>{element.portion*element.multiplier} porsi</small></span>
-                  <button className='btn ' onClick={handleDecr}><i className="bi bi-dash-circle"></i></button>
-                </small>
-              </div>
+        <ul id="listRecipeAdded" className="list-group">
+          {titles.map((element, index) => {
+            return(
+              <li className="list-group-item " key={index}>
+                <div className=" wrapRecipeAdded d-flex flex-column align-items-start " >
+                  <div className='recipeAddedItem '>{element.title} untuk {element.portion*element.multiplier} porsi</div>
+                  <small className="buttonGroup align-self-end">
+                    <button data-value={element._id} className='btn btn-secnndary delete-btn ' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button>
+                    <button className="btn btnAdd" data-index={index} onClick={handleIncrDecr}><i className="bi bi-plus-circle"></i></button>
+                    <span className='portionAmount'><small>{element.portion*element.multiplier} porsi</small></span>
+                    {/* <span className='portionAmount'><small>{element.multipliedQuantity} porsi</small></span> */}
+                    <button className='btn btnMin' data-index={index} onClick={handleIncrDecr}><i className="bi bi-dash-circle"></i></button>
+                  </small>
+                </div>
+                
+              </li>
               
-            </li>
-            
-          )
-        })}
-      </ul>
-      
+            )
+          })}
+        </ul>
+        
+      </div>
+      <div id='warning' style={{display:"none"}}>
+        <button className='btn-primary' onClick={handleRefresh}>Tampilkan List Belanja</button>
+      </div>
+      <ShoppingList userid={userid} show={show} />
     </div>
 
     

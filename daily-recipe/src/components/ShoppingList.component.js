@@ -6,7 +6,7 @@ const ShoppingList = (props) => {
   // const [shoppingItem,setShoppingItem] = useState([])
   const [statusFalse,setstatusFalse] = useState([])
   const [statusTrue,setstatusTrue] = useState([])
-  
+  const show = props.show
   const userid = props.userid;
 
   useEffect(() =>  {
@@ -43,7 +43,7 @@ const ShoppingList = (props) => {
   }
 
   return (
-    <div>
+    <div style={{display:show}}>
     <div className='container'>
       
         <div className='header d-flex justify-content-between'>
