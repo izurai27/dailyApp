@@ -74,9 +74,7 @@ const ListBelanja = (props) => {
           updateShoppingList(userid)
           
         },[userid]);
-        
-        console.log(titleState)
-  
+          
   return (
     <div>
       <RecipeAdded recipetitle={titleState} userid={userid}/>

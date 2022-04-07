@@ -20,10 +20,6 @@ const RecipeAdded = (props) => {
 
   },[recipetitle])
 
-  // console.log(title)
-  console.log(titles)
-
-
   //command utnuk menampilkan list recipeadded dan menyembunyikannya, supaya halaman bisa langsung menampilkan list belanja
   const hideList = () => {
     const listRecipeAdded = document.querySelector("#listRecipeAdded");
@@ -80,9 +76,8 @@ const RecipeAdded = (props) => {
 
   }
 
-  const handleRefresh = () => {
-    updateShoppingList(userid);
-    console.log('yakin mau refresh')
+  const handleRefresh = async () => {
+    await updateShoppingList(userid);
     setShow('block')
     warning.style.display = "none"
   }

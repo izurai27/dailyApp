@@ -12,24 +12,26 @@ const ShoppingList = (props) => {
   useEffect(() =>  {
     
     
-    const sendGetRequest = async () => {
+    const getShoppingList = async (userid) => {
       try {
-        console.log(userid)
+        
           const resp = await axios.get('http://localhost:5000/shoppingList/userid='+userid);
           console.log(resp.data)
+          console.log('rerender')
           // setShoppingItem(resp.data)
           setstatusFalse(resp.data.filter(element => element.status === false))
           setstatusTrue(resp.data.filter(element => element.status === true))
-                    
+          return resp.data          
       } catch (err) {
           
           console.error(err);
       }
     };
   
-  sendGetRequest();
-
-  },[userid]);
+  
+    getShoppingList(userid) 
+    
+  },[userid,show]);
   
   // console.log(shoppingItem)
   function handleChecked (e) {
