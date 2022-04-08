@@ -3,7 +3,7 @@ const totalPerElement = (array) => {
   array.reduce(function(result, item) {
             
     if (!result[item.ingredientsName]) {
-      result[item.ingredientsName] = { userid:item.userid, ingredientsName: item.ingredientsName, multipliedQuantity: 0, measurement:item.measurement };
+      result[item.ingredientsName] = { userid:item.userid, ingredientsName: item.ingredientsName, multipliedQuantity: 0, measurement:item.measurement, status:false };
       ingredientReduce.push(result[item.ingredientsName])
     }
 

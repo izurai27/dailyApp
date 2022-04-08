@@ -21,11 +21,12 @@ router.route('/add').post((req,res)=>{
   const ingredientsName = req.body.ingredientsName
   const multipliedQuantity = req.body.multipliedQuantity
   const measurement = req.body.measurement
+  const status = req.body.status
 
 
   // status = req.body.status
   const newShopping = new shopping({
-    userid, ingredientsName,multipliedQuantity,measurement
+    userid, ingredientsName,multipliedQuantity,measurement, status
   })
 
   newShopping.save()
@@ -46,6 +47,12 @@ router.route('/deleteby/userid=:userid').delete((req,res)=>{
   .then(() => res.json('shopping successfully deleted'))
   .catch(err => res.status(400).json('error: '+err))
 })
+//delete many by userid and status false
+router.route('/statusfalse/userid=:userid').delete((req,res)=>{
+  shopping.deleteMany({userid : req.params.userid,status:false})
+  .then(() => res.json('status false successfully deleted'))
+  .catch(err => res.status(400).json('error: '+err))
+})
 
 //command to update status only
 router.route('/updateStatus/_id=:id').patch((req,res) => {
@@ -64,7 +71,7 @@ router.route('/update/userid=:id').post((req,res) => {
     shopping.ingredientsName = req.body.ingredientsName
     shopping.multipliedQuantity = req.body.multipliedQuantity
     shopping.measurement = req.body.measurement
-    shopping.status = req.body.measurement
+    shopping.status = req.body.status
 
     shopping.save()
     .then(() => res.json(`shopping id = ${req.params.id} successfully updated`))

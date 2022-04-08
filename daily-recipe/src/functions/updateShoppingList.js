@@ -17,6 +17,7 @@ const updateShoppingList = async (userid) => {
             
             userid:item.userid,
             ingredientsName:item2.ingredientsName,
+            status:false,
             multipliedQuantity:item2.quantity*item.multiplier, 
             measurement:item2.measurement});
           })
@@ -37,7 +38,7 @@ const updateShoppingList = async (userid) => {
         //5. menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
         const addShoppinglength = addShopping.length
         for (let i=0 ; i < addShoppinglength ; i++){
-          // console.log(addShopping[i])
+          console.log(addShopping[i])
           axios.post('http://localhost:5000/shoppingList/add',addShopping[i])
           .then(res => console.log(res.data));
         }

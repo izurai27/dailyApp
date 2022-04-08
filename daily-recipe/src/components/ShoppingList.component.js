@@ -26,21 +26,20 @@ const ShoppingList = (props) => {
         console.error(err);
     }
   };
-
   const statusFalseCopy = [...statusFalse]
   
   function handleChecked (e) {
-    const id = e.target.dataset.id;
-    const value = (e.target.value === false) ? false : true;
-    axios.patch('http://localhost:5000/shoppingList/updateStatus/_id='+id,{"status": !value})
-    .then(res => console.log(res));
-    console.log(value,!value)
+    const index = e.target.dataset.index;
+    statusFalseCopy[index].status = !statusFalseCopy[index].status
+    console.log(statusFalseCopy[index].ingredientsName)
+    console.log(statusFalseCopy[index].status)
+    setstatusFalse([...statusFalseCopy])
+    
   }
-
+  
   const handleIncrDecr = (e) => {
     const index = e.target.dataset.index
     
-   
     if(e.target.classList.contains('btnAdd')){
       statusFalseCopy[index].multipliedQuantity += 1
     } else if(e.target.classList.contains('btnMin')) {
@@ -49,12 +48,13 @@ const ShoppingList = (props) => {
     }
     setstatusFalse([...statusFalseCopy])
   }
-
+  
   const handleDelete = () => {
-
+    
   }
-
-  const handleEdit = (e) => {
+  
+  const handleEdit = async (e) => {
+    
     const edit = document.querySelectorAll('.edit')
     edit.forEach(element => {
       element.style.display="block"
@@ -62,34 +62,34 @@ const ShoppingList = (props) => {
     const editSave = document.querySelector('.editSave')
     editSave.style.display="inline-block"
     e.target.style.display = 'none'
-
+    
     const checkInput = document.querySelectorAll('.form-check-input')
     checkInput.forEach(element => {
       element.style.display="none"
     })
   }
-
+  
   const handlechangeAmount = (e) => {
     const index = e.target.dataset.index
     statusFalseCopy[index].multipliedQuantity = e.target.value
     setstatusFalse([...statusFalseCopy])
   }
-
+  
   const handleSave = async (e) => {
     //update shoppingList ke database dan rerender
     
-      //menghapus semua shoppinglist utk userid tersebut (perlu investigasi dl apakah diperlukan atau tidak)
-      await axios.delete('http://localhost:5000/shoppingList/deleteby/userid='+userid)
-      .then(resp => console.log(resp))
-      
-      //menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
-      const statusFalselength = statusFalse.length
-      for (let i=0 ; i < statusFalselength ; i++){
-        // console.log(addShopping[i])
-        axios.post('http://localhost:5000/shoppingList/add',statusFalse[i])
-        .then(res => console.log(res.data));
-      }
-
+    //menghapus semua shoppinglist utk userid tersebut (perlu investigasi dl apakah diperlukan atau tidak)
+    await axios.delete('http://localhost:5000/shoppingList/statusfalse/userid='+userid)
+    .then(resp => console.log(resp))
+    
+    //menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
+    const statusFalselength = statusFalse.length
+    for (let i=0 ; i < statusFalselength ; i++){
+      // console.log(addShopping[i])
+      axios.post('http://localhost:5000/shoppingList/add',statusFalse[i])
+      .then(res => console.log(res.data));
+    }
+    
     //hide buttons    
     const editShow = document.querySelector('.editShow')
     editShow.style.display="inline-block"
@@ -99,11 +99,31 @@ const ShoppingList = (props) => {
     edit.forEach(element => {
       element.style.display="none"
     })
-
+    
     const checkInput = document.querySelectorAll('.form-check-input')
     checkInput.forEach(element => {
       element.style.display="inline"
     })
+  }
+  
+  const handlerefresh = async (e) => {
+    
+    console.log(statusFalseCopy)
+    console.log(statusFalse)
+    console.log(statusTrue)
+    await axios.delete('http://localhost:5000/shoppingList/statusfalse/userid='+userid)
+      .then(resp => console.log(resp))
+      
+      //menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
+      const statusFalselength = statusFalse.length
+      for (let i=0 ; i < statusFalselength ; i++){
+        console.log(statusFalse[i])
+        axios.post('http://localhost:5000/shoppingList/add',statusFalse[i])
+        .then(res => console.log(res.data));
+      }
+
+      getShoppingList(userid) 
+
   }
 
   return (
@@ -113,7 +133,7 @@ const ShoppingList = (props) => {
           <div className='header d-flex justify-content-between'>
             <span className='titleRecipeAdded'>List belanja</span>
             <span className='button-group'>
-              <button className='btn-sm btn-primary'><i className="bi bi-arrow-clockwise"></i></button>
+              <button className='btn-sm btn-primary' onClick={handlerefresh}><i className="bi bi-arrow-clockwise"></i></button>
               <button className='btn-sm btn-secondary editShow' onClick={handleEdit}><i className="bi bi-pencil"></i></button>
               <button className='btn-sm btn-secondary editSave' onClick={handleSave}><i className="bi bi-save"></i></button>
             </span>
@@ -126,7 +146,7 @@ const ShoppingList = (props) => {
             <div className=' wrapRecipeAdded d-flex flex-column align-items-start shopList' key={element._id}>
 
               <div className="form-check">
-                <input className="form-check-input" type="checkbox" value={element.status} id="flexCheckDefault" data-id={element._id} onChange={handleChecked}/>
+                <input className="form-check-input" type="checkbox" value={element.status} id="flexCheckDefault" data-id={element._id} data-index={index} onChange={handleChecked}/>
                 <label className="form-check-label" htmlFor="flexCheckDefault">
                     {element.ingredientsName} {element.multipliedQuantity} {element.measurement} 
                 </label>
