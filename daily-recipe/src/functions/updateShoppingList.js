@@ -6,7 +6,7 @@ const updateShoppingList = async (userid) => {
   try {
     const resp = await axios.get('http://localhost:5000/addList/userid='+userid);
     
-      console.log(resp.data)
+      // console.log(resp.data)
       
       
       //menyiapkan data untuk dikirim ke database shopping list  
@@ -28,7 +28,7 @@ const updateShoppingList = async (userid) => {
         // 3. mereduce ingredientArr sehingga quantity per ingredient merupakan total dari ingredient yg sama (dari resep berbeda)
         // dan menjadikan item untuk ditambahkan ke database shopping list
         const addShopping = totalPerElement(ingredientCombined)
-        console.log(addShopping)          
+        // console.log(addShopping)          
         
         //4. menghapus semua shoppinglist utk userid tersebut (perlu investigasi dl apakah diperlukan atau tidak)
         await axios.delete('http://localhost:5000/shoppingList/deleteby/userid='+userid)

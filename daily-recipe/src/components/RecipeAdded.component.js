@@ -11,9 +11,7 @@ const RecipeAdded = (props) => {
   const recipetitle = props.recipetitle
   const userid = props.userid
   const warning = document.querySelector("#warning")
-  // const title = props.recipetitle
-  // const title = recipetitle
-  
+    
   useEffect(() => {   
     
     setTitles([...recipetitle ])
@@ -71,14 +69,18 @@ const RecipeAdded = (props) => {
     })
     
 
-  //re-render shoppinglist
+  
     
 
   }
 
   const handleRefresh = async () => {
+
     await updateShoppingList(userid);
+
+    //re-render shoppinglist
     setShow('block')
+
     warning.style.display = "none"
   }
 
