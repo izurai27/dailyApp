@@ -3,7 +3,7 @@ import axios from 'axios';
 import AddList from './AddList.component';
 import {Link} from 'react-router-dom'
 //command to get data from recipe database//
-import fetchdata from './fetchdata';
+// import fetchdata from './fetchdata';
 const url = 'http://localhost:5000/recipes';
 
 // let recipes 
@@ -19,7 +19,7 @@ const RecipeList = (props) => {
      axios.get(url)
       .then(res => {
         setRecipe(res.data)
-        console.log(res.data)
+        
       })
       .catch(err => {
         console.log(err);
