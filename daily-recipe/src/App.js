@@ -14,7 +14,7 @@ import About from './components/about.component';
 
 
 function App() {
-  const [userid,setUserid] = useState('fajri') // ini nantinya akan diganti sesuai dengan user yang login
+  const [userid,setUserid] = useState('izma') // ini nantinya akan diganti sesuai dengan user yang login
   
 
   return (

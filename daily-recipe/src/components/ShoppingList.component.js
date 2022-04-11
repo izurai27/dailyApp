@@ -49,10 +49,7 @@ const ShoppingList = (props) => {
     setstatusFalse([...statusFalseCopy])
   }
   
-  const handleDelete = () => {
-    
-  }
-  
+   
   const handleEdit = async (e) => {
     
     const edit = document.querySelectorAll('.edit')
@@ -108,17 +105,17 @@ const ShoppingList = (props) => {
   
   const handlerefresh = async (e) => {
     
-    console.log(statusFalseCopy)
-    console.log(statusFalse)
-    console.log(statusTrue)
-    await axios.delete('http://localhost:5000/shoppingList/statusfalse/userid='+userid)
-      .then(resp => console.log(resp))
+    
+    // await axios.delete('http://localhost:5000/shoppingList/statusfalse/userid='+userid)
+    //   .then(resp => console.log(resp))
       
       //menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
       const statusFalselength = statusFalse.length
       for (let i=0 ; i < statusFalselength ; i++){
         console.log(statusFalse[i])
-        axios.post('http://localhost:5000/shoppingList/add',statusFalse[i])
+        const id = statusFalse[i]._id
+        const statusUpdate = statusFalse[i].status
+        axios.patch('http://localhost:5000/shoppingList/updateStatus/userid='+userid+'/_id='+id,{status:statusUpdate })
         .then(res => console.log(res.data));
       }
 
@@ -153,7 +150,7 @@ const ShoppingList = (props) => {
               </div>
 
               <small className="buttonGroup align-self-end edit">
-                <button data-value={element._id} className='btn btn-secnndary delete-btn ' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button>
+                {/* <button data-value={element._id} className='btn btn-secnndary delete-btn ' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button> */}
                 <button className="btn btnAdd" data-index={index} onClick={handleIncrDecr}><i className="bi bi-plus-circle"></i></button>
                 <input type="text" value={element.multipliedQuantity} onChange={handlechangeAmount} data-index={index}/>
                 <button className='btn btnMin' data-index={index} onClick={handleIncrDecr}><i className="bi bi-dash-circle"></i></button>
@@ -177,7 +174,7 @@ const ShoppingList = (props) => {
         return (
               <div key={element._id}>
                 <div style={{textDecoration:"line-through", marginLeft:"20px", color:"grey"}}>
-                    {element.ingredientsName} {element.quantity} {element.measurement} 
+                    {element.ingredientsName} {element.multipliedQuantity} {element.measurement} 
                 </div>
               </div>
           )

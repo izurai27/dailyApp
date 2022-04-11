@@ -42,11 +42,12 @@ router.route('/id=:id').delete((req,res)=>{
 })
 
 //delete many by userid
-router.route('/deleteby/userid=:userid').delete((req,res)=>{
-  shopping.deleteMany({userid : req.params.userid})
-  .then(() => res.json('shopping successfully deleted'))
-  .catch(err => res.status(400).json('error: '+err))
-})
+// router.route('/deleteby/userid=:userid').delete((req,res)=>{
+//   shopping.deleteMany({userid : req.params.userid})
+//   .then(() => res.json('shopping successfully deleted'))
+//   .catch(err => res.status(400).json('error: '+err))
+// })
+
 //delete many by userid and status false
 router.route('/statusfalse/userid=:userid').delete((req,res)=>{
   shopping.deleteMany({userid : req.params.userid,status:false})
@@ -55,8 +56,8 @@ router.route('/statusfalse/userid=:userid').delete((req,res)=>{
 })
 
 //command to update status only
-router.route('/updateStatus/_id=:id').patch((req,res) => {
-  shopping.updateOne({ _id: req.params.id }, { status : req.body.status })
+router.route('/updateStatus/userid=:userid/_id=:id').patch((req,res) => {
+  shopping.updateOne({userid:req.params.userid, _id: req.params.id }, { status : req.body.status })
   .then (() => {res.json('item successfully updated');console.log(res)})
   .catch(err => res.status(400).json('Error:'+err))
 })
