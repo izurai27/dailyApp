@@ -105,11 +105,11 @@ const RecipeAdded = (props) => {
                 <div className=" wrapRecipeAdded d-flex flex-column align-items-start " >
                   <div className='recipeAddedItem '>{element.title} untuk {element.portion*element.multiplier} porsi</div>
                   <small className="buttonGroup align-self-end">
-                    <button data-value={element._id} className='btn btn-secnndary delete-btn ' onClick={handleDelete}><i className="bi bi-trash3 trashIcon"></i></button>
-                    <button className="btn btnAdd" data-index={index} onClick={handleIncrDecr}><i className="bi bi-plus-circle"></i></button>
+                    <button data-value={element._id} className='btn btn-secnndary delete-btn ' onClick={handleDelete}><i className="noaction  bi bi-trash3 trashIcon"></i></button>
+                    <button className="btn btnAdd" data-index={index} onClick={handleIncrDecr}><i className="noaction bi bi-plus-circle"></i></button>
                     <span className='portionAmount'><small>{element.portion*element.multiplier} porsi</small></span>
                     {/* <span className='portionAmount'><small>{element.multipliedQuantity} porsi</small></span> */}
-                    <button className='btn btnMin' data-index={index} onClick={handleIncrDecr}><i className="bi bi-dash-circle"></i></button>
+                    <button className='btn btnMin' data-index={index} onClick={handleIncrDecr}><i className="noaction bi bi-dash-circle"></i></button>
                   </small>
                 </div>
                 

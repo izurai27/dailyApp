@@ -53,6 +53,6 @@ li.list-group-item.wrapRecipeAdded{
   box-shadow: 2px 2px 2px grey;
 }
 
-i{
+i.noaction{
   pointer-events: none;
 }

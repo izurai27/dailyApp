@@ -31,8 +31,7 @@ const ShoppingList = (props) => {
   function handleChecked (e) {
     const index = e.target.dataset.index;
     statusFalseCopy[index].status = !statusFalseCopy[index].status
-    console.log(statusFalseCopy[index].ingredientsName)
-    console.log(statusFalseCopy[index].status)
+    //  
     setstatusFalse([...statusFalseCopy])
     
   }

@@ -2,42 +2,29 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import Gap from './gap'
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword} from "firebase/auth";
 import '../components/register.css';
-import displayPassword from '../displayPassword'
-
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDXuplE1cMNCGreE2Dt8-ObAXvsApq1luM",
-  authDomain: "daily-recipe-feaef.firebaseapp.com",
-  projectId: "daily-recipe-feaef",
-  storageBucket: "daily-recipe-feaef.appspot.com",
-  messagingSenderId: "703638561083",
-  appId: "1:703638561083:web:f85b73fc309b1736af171e",
-  measurementId: "G-5YQRB6D16L"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-// const analytics = getAnalytics(app);
-// onAuthStateChanged(auth, user => {
-//   // Check for user status
-//   console.log(user)
-// });
+import displayPassword from '../functions/displayPassword'
+import auth from '../config/firebase';
+import { useSelector} from 'react-redux'
 
 const Register = () => {
   const [email,setEmail] = useState('')
   const [passwrd,setPasswrd] = useState('')
+  // const [user, setUser] = useState({});
+  const userd = useSelector((state)=>state.user.value)
+  console.log(userd.name)
+
+  // onAuthStateChanged(auth, (currentUser) => {
+  //   setUser(currentUser);
+  // });
   
-  
+
   const handleInputEmail = (e) => {
     setEmail (e.target.value);
     
@@ -47,8 +34,8 @@ const Register = () => {
     setPasswrd(e.target.value)
   }
      
-  const handleRegisterBtn = async () => {
-    // console.log(email, passwrd)
+  const handleRegisterBtn = async (event) => {
+    event.preventDefault() //dont forget this
     const emailReg = email;
     const passReg = passwrd;
     
@@ -56,16 +43,14 @@ const Register = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, emailReg, passReg)
       console.log(userCredential)
     } catch (error) {
-      console.log(error)
-      // showLoginError(error)
+      console.log(error.message)
     }
   }
 
+  
   return (
     <div className='container-sm'>
-
       <form className='container-sm'>
-        
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
           <input onChange={handleInputEmail} type="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp"  placeholder="Masukkan alamat email akan yang didaftarkan" name="emailReg"/>
@@ -87,6 +72,7 @@ const Register = () => {
         <Gap width="4px" height="1px"/>
         <Link to='/user/login' className='navbar-brand fs-6 ms-2 mt-3'>Ke Halaman Login</Link>
       </div>
+      
     </div>
   )
 }
