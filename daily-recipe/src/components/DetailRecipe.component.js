@@ -3,8 +3,9 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Gap from './gap'
 import AddList from './AddList.component';
+import url from '../config/url';
 
-const url = 'http://localhost:5000/recipes';
+// const url = url+'/recipes';
 
 const DetailRecipe = () => {
   const [recipeDetail,setRecipeDetail] = useState([]);
@@ -13,7 +14,7 @@ const DetailRecipe = () => {
   const {id} = useParams()
 
   useEffect(() => {   
-     axios.get(url+'/id='+id)
+     axios.get(url+'/recipes/id='+id)
       .then(res => {
         setRecipeDetail(res.data)
         // console.log(res.data)

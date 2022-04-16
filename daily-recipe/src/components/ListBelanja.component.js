@@ -1,27 +1,20 @@
 import React, {useEffect, useState} from 'react'
 import RecipeAdded from './RecipeAdded.component'
 import axios from 'axios'
-// import ShoppingList from './ShoppingList.component'
-// import combineArrayElement from '../functions/combineArrayElement'
-// import totalPerElement from '../functions/totalPerElement'
 import updateShoppingList from '../functions/updateShoppingList'
-
-import auth from '../config/firebase'
-
+import url from '../config/url'
 
 const ListBelanja = (props) => {
   
   const [titleState, setTitleState] = useState([])
   
   const userid = props.userid
-  console.log(userid)
-  console.log(auth.currentUser)
-
+ 
   useEffect(() =>  {
    
     const sendGetRequest = async () => {
       try {
-        const resp = await axios.get('http://localhost:5000/addList/userid='+userid);
+        const resp = await axios.get(url+'/addList/userid='+userid);
         
         setTitleState(resp.data.map(element => (
           { 

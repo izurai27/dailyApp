@@ -1,10 +1,11 @@
 import axios from "axios";
 import combineArrayElement from "./combineArrayElement";
 import totalPerElement from "./totalPerElement";
+import url from "../config/url";
 
 const updateShoppingList = async (userid) => {
   try {
-    const resp = await axios.get('http://localhost:5000/addList/userid='+userid);
+    const resp = await axios.get(url+'/addList/userid='+userid);
     
       //menyiapkan data untuk dikirim ke database shopping list  
       //1. mengubah quantity per ingredient menjadi sesuai dengan porsi yang dipilih
@@ -29,14 +30,14 @@ const updateShoppingList = async (userid) => {
         // console.log(addShopping)          
         
         //4. menghapus semua shoppinglist utk userid tersebut (perlu investigasi dl apakah diperlukan atau tidak)
-        await axios.delete('http://localhost:5000/shoppingList/statusfalse/userid='+userid)
+        await axios.delete(url+'/shoppingList/statusfalse/userid='+userid)
         .then(resp => resp)
         
         //5. menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
         const addShoppinglength = addShopping.length
         for (let i=0 ; i < addShoppinglength ; i++){
           
-          axios.post('http://localhost:5000/shoppingList/add',addShopping[i])
+          axios.post(url+'/shoppingList/add',addShopping[i])
           .then(res => console.log(res.data));
         }
       } catch (err) {

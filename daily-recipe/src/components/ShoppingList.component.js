@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import './shopping.css'
+import url from '../config/url';
 
 const ShoppingList = (props) => {
 
@@ -17,7 +18,7 @@ const ShoppingList = (props) => {
   const getShoppingList = async (userid) => {
     try {
       
-        const resp = await axios.get('http://localhost:5000/shoppingList/userid='+userid);
+        const resp = await axios.get(url+'/shoppingList/userid='+userid);
         setstatusFalse(resp.data.filter(element => element.status === false))
         setstatusTrue(resp.data.filter(element => element.status === true))
         return resp.data          
@@ -75,14 +76,14 @@ const ShoppingList = (props) => {
     //update shoppingList ke database dan rerender
     
     //menghapus semua shoppinglist utk userid tersebut (perlu investigasi dl apakah diperlukan atau tidak)
-    await axios.delete('http://localhost:5000/shoppingList/statusfalse/userid='+userid)
+    await axios.delete(url+'/shoppingList/statusfalse/userid='+userid)
     .then(resp => console.log(resp))
     
     //menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
     const statusFalselength = statusFalse.length
     for (let i=0 ; i < statusFalselength ; i++){
       // console.log(addShopping[i])
-      axios.post('http://localhost:5000/shoppingList/add',statusFalse[i])
+      axios.post(url+'/shoppingList/add',statusFalse[i])
       .then(res => console.log(res.data));
     }
     
@@ -105,7 +106,7 @@ const ShoppingList = (props) => {
   const handlerefresh = async (e) => {
     
     
-    // await axios.delete('http://localhost:5000/shoppingList/statusfalse/userid='+userid)
+    // await axios.delete(url+'/shoppingList/statusfalse/userid='+userid)
     //   .then(resp => console.log(resp))
       
       //menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
@@ -114,7 +115,7 @@ const ShoppingList = (props) => {
         console.log(statusFalse[i])
         const id = statusFalse[i]._id
         const statusUpdate = statusFalse[i].status
-        axios.patch('http://localhost:5000/shoppingList/updateStatus/userid='+userid+'/_id='+id,{status:statusUpdate })
+        axios.patch(url+'/shoppingList/updateStatus/userid='+userid+'/_id='+id,{status:statusUpdate })
         .then(res => console.log(res.data));
       }
 

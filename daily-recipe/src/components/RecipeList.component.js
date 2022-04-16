@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import AddList from './AddList.component';
 import {Link} from 'react-router-dom'
+import url from '../config/url';
 
 //command to get data from recipe database//
 // import fetchdata from './fetchdata';
-const url = 'http://localhost:5000/recipes';
 
 // let recipes 
-// recipes = fetchdata('http://localhost:5000/recipes').then(res=>res.data)
+// recipes = fetchdata(url+'/recipes').then(res=>res.data)
 
 
 const RecipeList = (props) => {
@@ -17,7 +17,7 @@ const RecipeList = (props) => {
   const userid = props.userid
 
   useEffect(() => {   
-     axios.get(url)
+     axios.get(url+'/recipes')
       .then(res => {
         setRecipe(res.data)
         

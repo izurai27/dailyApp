@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import PopUp from './popUp.component';
 import { useState } from 'react';
+import url from '../config/url';
 
 const AddList = (props) => {
   const  [popUpSuccess,setPopUpSuccess] = useState(false)
@@ -19,7 +20,7 @@ const AddList = (props) => {
     console.log(userid)
     if (userid !== undefined) {
 
-      const isExist = await axios.get('http://localhost:5000/addList/userid='+userid+'/recipeId='+recipeId) 
+      const isExist = await axios.get(url+'/addList/userid='+userid+'/recipeId='+recipeId) 
       .then(res => res.data)
       
       const isExistLength = isExist.length
@@ -28,12 +29,12 @@ const AddList = (props) => {
         const id = isExist[0]._id
         const multiplier = isExist[0].multiplier + 1;
        
-        await axios.patch('http://localhost:5000/addList/updatemultiplier/_id='+id,{multiplier})
+        await axios.patch(url+'/addList/updatemultiplier/_id='+id,{multiplier})
         .then(res => console.log(res.data));
   
       } else {
         addList = {userid, title, recipeId, ingredients, portion}
-        await axios.post('http://localhost:5000/addList/add',addList)
+        await axios.post(url+'/addList/add',addList)
         .then(res => console.log(res.data));
       }
       setPopUpSuccess(true)

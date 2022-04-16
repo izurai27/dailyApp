@@ -4,6 +4,7 @@ import './RecipeAdded.css'
 import axios from 'axios'
 import ShoppingList from './ShoppingList.component'
 import updateShoppingList from '../functions/updateShoppingList'
+import url from '../config/url'
 
 const RecipeAdded = (props) => {
   const [titles, setTitles] = useState(["blah"])
@@ -32,7 +33,7 @@ const RecipeAdded = (props) => {
     let text;
     if (window.confirm("Anda akan hapus resep ini dari list Makanan yang akan dimasak?") === true) {
       text = "You pressed OK!";
-      axios.delete('http://localhost:5000/addList/id='+targetId)
+      axios.delete(url+'/addList/id='+targetId)
             .then(resp => console.log(resp))
       
     } else {
@@ -64,7 +65,7 @@ const RecipeAdded = (props) => {
 
   //3. update ke database
     titles.forEach(elemen => {
-      axios.patch('http://localhost:5000/addList/updatemultiplier/_id='+elemen._id,{multiplier:elemen.multiplier})
+      axios.patch(url+'/addList/updatemultiplier/_id='+elemen._id,{multiplier:elemen.multiplier})
       .then(res => console.log(res.data));
     })
     
