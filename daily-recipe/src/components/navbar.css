@@ -5,6 +5,7 @@ nav{
 
 nav .navbar-collapse.collapse{
   display:block;
+  
 }
 
 @media (max-width: 576px){

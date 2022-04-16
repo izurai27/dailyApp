@@ -4,21 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { configureStore} from "@reduxjs/toolkit"
-import {Provider} from 'react-redux'
-import userReducer from './config/redux/userRedux'
+// import { configureStore} from "@reduxjs/toolkit"
 
- const store = configureStore({
-  reducer :{
-    user:userReducer
-  },
-})
+// import userReducer from './config/redux/userRedux'
+import {BrowserRouter as Router} from 'react-router-dom';
+//  const store = configureStore({
+//   reducer :{
+//     user:userReducer
+//   },
+// })
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Router>
       <App />
-    </Provider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

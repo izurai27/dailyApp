@@ -1,33 +1,21 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import Gap from './gap'
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-import { createUserWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut} from "firebase/auth";
 import '../components/register.css';
 import displayPassword from '../functions/displayPassword'
 import auth from '../config/firebase';
-import { useSelector} from 'react-redux'
+import PopUp from './popUp.component';
+
 
 const Register = () => {
   const [email,setEmail] = useState('')
   const [passwrd,setPasswrd] = useState('')
-  // const [user, setUser] = useState({});
-  const userd = useSelector((state)=>state.user.value)
-  console.log(userd.name)
-
-  // onAuthStateChanged(auth, (currentUser) => {
-  //   setUser(currentUser);
-  // });
-  
+  const  [popUp,setPopUp] = useState(false)
+  const navigate = useNavigate()
 
   const handleInputEmail = (e) => {
     setEmail (e.target.value);
-    
   }
   
   const handlepasswrd = (e) => {
@@ -40,21 +28,39 @@ const Register = () => {
     const passReg = passwrd;
     
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, emailReg, passReg)
-      console.log(userCredential)
+      await createUserWithEmailAndPassword(auth, emailReg, passReg)
+      
+      //popup notifikasi registrasi sukses
+        setPopUp(true)
+
+      //signout
+        await signOut(auth)
+     
     } catch (error) {
       console.log(error.message)
     }
   }
 
+  const handleCloseBtn = () =>{
+    setPopUp(false)
+    
+    //TODO :harus cari tau cara redirect ke halaman login
+    navigate('/user/login')
+  }
+
   
   return (
     <div className='container-sm'>
+          {popUp && <PopUp message="Registrasi berhasil. Silakan login!" handleCloseBtn={handleCloseBtn}/>} 
+          <Gap height="20px"/>
       <form className='container-sm'>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-          <input onChange={handleInputEmail} type="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp"  placeholder="Masukkan alamat email akan yang didaftarkan" name="emailReg"/>
-          {/* <div id="emailHelp" className="form-text">Masukkan alamat email akan yang didaftarkan</div> */}
+          <input onChange={handleInputEmail} 
+            type="email" className="form-control" 
+            id="exampleInputEmail" aria-describedby="emailHelp"  
+            placeholder="Masukkan alamat email akan yang didaftarkan" name="emailReg"/>
+         
         </div>
         <div className="mb-3">
           <label htmlFor="InputPassword" className="form-label">Password</label>
@@ -72,7 +78,6 @@ const Register = () => {
         <Gap width="4px" height="1px"/>
         <Link to='/user/login' className='navbar-brand fs-6 ms-2 mt-3'>Ke Halaman Login</Link>
       </div>
-      
     </div>
   )
 }

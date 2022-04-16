@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Gap from './gap'
 import displayPassword from '../functions/displayPassword'
 
-const Login = (props) => {
+const Logout = (props) => {
   
   return (
 

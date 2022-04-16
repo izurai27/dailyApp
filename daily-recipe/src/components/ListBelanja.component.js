@@ -6,15 +6,19 @@ import axios from 'axios'
 // import totalPerElement from '../functions/totalPerElement'
 import updateShoppingList from '../functions/updateShoppingList'
 
+import auth from '../config/firebase'
+
 
 const ListBelanja = (props) => {
   
   const [titleState, setTitleState] = useState([])
   
   const userid = props.userid
- 
+  console.log(userid)
+  console.log(auth.currentUser)
+
   useEffect(() =>  {
-    
+   
     const sendGetRequest = async () => {
       try {
         const resp = await axios.get('http://localhost:5000/addList/userid='+userid);
@@ -42,6 +46,7 @@ const ListBelanja = (props) => {
           
   return (
     <div>
+      
       <RecipeAdded recipetitle={titleState} userid={userid}/>
       {/* <ShoppingList userid={userid} /> */}
     </div>
