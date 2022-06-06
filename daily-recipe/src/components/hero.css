@@ -1,10 +1,10 @@
 .herobg {
   
   height:43vh;
-  background-image: url("../images/background2e.jpg");
+  /* background-image: url("../images/background2e.jpg"); */
   /* height:24vh; */
   background-image: url("../images/background4e.jpg");
-  width:100vw;
+  /* width:100vw; */
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;

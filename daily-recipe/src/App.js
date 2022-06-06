@@ -8,12 +8,12 @@ import Login from './components/login.component';
 import Register from './components/Register.component';
 import DetailRecipe from './components/DetailRecipe.component';
 import auth from './config/firebase';
-import Profile from './components/profile.component';
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import MenuBelanja from './components/menuBelanja.component';
 
 
 function App() {
+
   const [userid, setUserid] = useState(undefined) // ini nantinya akan diganti sesuai dengan user yang login
   const [email,setEmail] = useState('')
   const [passwrd,setPasswrd] = useState('')
@@ -27,7 +27,6 @@ function App() {
     
     try {
       await signInWithEmailAndPassword(auth, emailLogin, passLogin)
-      // console.log(userCredential.user.email)
       navigate('/')
       
     } catch (error) {
@@ -49,7 +48,7 @@ function App() {
     currentUser? setUserid(currentUser.email) : setUserid(undefined)
   });
 
-
+  
   return (
     <div>
       <Navbar userid={userid} />
@@ -59,10 +58,8 @@ function App() {
         <Route path='/user/login' element={<Login handleLoginBtn={handleLoginBtn} handleInputEmail={handleInputEmail} handlepasswrd={handlepasswrd} />}/>
         <Route path='/user/register' element={<Register />}/>
         <Route path='/detail/:id' element={<DetailRecipe/>}/>
-        <Route path='/profile' element={<Profile/>}/>
         <Route path='/menu' element={<MenuBelanja/>}/>
       </Routes>
-      {/* {userid} */}
       
     </div>
   );

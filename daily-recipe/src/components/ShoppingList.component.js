@@ -112,7 +112,7 @@ const ShoppingList = (props) => {
       //menambahkan ke databse shoppinglist dengan iterasi permasing2 ingredients
       const statusFalselength = statusFalse.length
       for (let i=0 ; i < statusFalselength ; i++){
-        console.log(statusFalse[i])
+        // console.log(statusFalse[i])
         const id = statusFalse[i]._id
         const statusUpdate = statusFalse[i].status
         axios.patch(url+'/shoppingList/updateStatus/userid='+userid+'/_id='+id,{status:statusUpdate })
