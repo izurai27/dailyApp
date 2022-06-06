@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import './navbar.css'
-import logo from '../images/logo.svg'
+import logo from '../images/logo.png'
 import auth from '../config/firebase'
 import {signOut} from "firebase/auth";
 import { useNavigate } from 'react-router-dom'

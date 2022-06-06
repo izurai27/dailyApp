@@ -24,3 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 daily-recipe\src\uploadRecipe.js
+*.tiff
+*.psd
