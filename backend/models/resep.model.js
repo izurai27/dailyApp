@@ -16,14 +16,14 @@ const recipeSchema = new schema ({
   title : { type: String, require : true},
   thumb : {type: String, require : true},
   portion : {type : Number, require : true},
-  cookingStyle : { type: String, require : true},
+  cookingStyle : { type: String, require : true, lowercase: true},
   instruction : [String],
   source : {type:String, require : true},
   ytLink : {type:String, require: true},
   ingredients : [detailIngredients],
   occasion : [String], //hari raya, sarapan, malam, sedang hujan, bulan puasa, dll
   mealtype : [String], //lauk, sayur, dessert, buah
-  origin: String,
+  origin: { type: String, require : true, lowercase: true},
   ingredientsInstruction: [ingredientsInstructionSchema]
 })
 

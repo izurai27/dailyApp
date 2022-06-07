@@ -8,6 +8,28 @@ router.route('/').get((req,res) => {
   .catch(err => res.status (400).json('error :' + err))
 });
 
+// command for filter by origin
+router.route('/origin/:origin').get((req,res) => {
+  recipe.find({origin : req.params.origin})
+  .then(recipe => res.json(recipe))
+  .catch(err => res.status (400).json('error :' + err))
+});
+
+
+// command for filter by cookingstyle
+router.route('/cookingstyle/:cookingstyle').get((req,res) => {
+  recipe.find({cookingStyle : req.params.cookingstyle})
+  .then(recipe => res.json(recipe))
+  .catch(err => res.status (400).json('error :' + err))
+});
+
+// command for filter by source
+router.route('/source/:source').get((req,res) => {
+  recipe.find({source : req.params.source})
+  .then(recipe => res.json(recipe))
+  .catch(err => res.status (400).json('error :' + err))
+});
+
 //command to add recipe
 router.route('/add').post((req,res)=>{
   
